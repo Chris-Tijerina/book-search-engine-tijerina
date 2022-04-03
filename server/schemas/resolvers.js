@@ -21,7 +21,7 @@ const resolvers = {
 		addUser: async (parent, args) => {
 			const user = await User.create(args);
 			const token = signToken(user);
-
+			console.log("HI " + JSON.stringify(args));
 			return { token, user };
 		},
 		login: async (parent, { email, password }) => {
@@ -36,8 +36,9 @@ const resolvers = {
 			if (!correctPw) {
 				throw new AuthenticationError("Incorrect credentials");
 			}
-
 			const token = signToken(user);
+			console.log("Hello " + user);
+			console.log("Hello " + token);
 			return { token, user };
 		},
 		saveBook: async (

@@ -14,13 +14,13 @@ export const QUERY_ALL = gql`
 `;
 
 export const QUERY_ME = gql`
-	query Me {
+	{
 		me {
 			_id
-			usernmame
+			username
 			email
 			savedBooks {
-				bookId
+				bookID
 				authors
 				description
 				image
